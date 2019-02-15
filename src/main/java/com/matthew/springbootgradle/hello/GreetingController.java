@@ -1,6 +1,7 @@
 package com.matthew.springbootgradle.hello;
 
 import com.matthew.springbootgradle.dal.model.Test;
+import com.matthew.springbootgradle.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -27,6 +28,9 @@ public class GreetingController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    private TestService testService;
+
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(TEMPLATE, name));
@@ -34,18 +38,18 @@ public class GreetingController {
 
     @RequestMapping("/query")
     public String query() {
-        String sql = "SELECT * FROM test_table";
-        List<Test> tests = jdbcTemplate.query(sql, (resultSet, rowNum) -> {
-            Test test = new Test();
-            test.setId(resultSet.getLong("id"));
-            test.setName(resultSet.getString("name"));
-            return test;
-        });
+        List<Test> tests = testService.queryAllTest();
         if(tests.isEmpty()) {
             return "";
         }
         StringBuffer result = new StringBuffer();
         tests.forEach(test -> result.append(test).append(";"));
         return result.toString();
+    }
+
+    @RequestMapping("/condition")
+    public String condition(@RequestParam(value = "name", defaultValue = "zeyuan") String name) {
+        Test test = testService.queryByName(name);
+        return test.toString();
     }
 }

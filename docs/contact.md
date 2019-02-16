@@ -12,11 +12,34 @@
 联系人需要包含如下字段
  + ID(唯一标示)
  + 姓名
+ + 英文名
  + 性别
  + 生日
  + 电话
+ + 邮箱
  + 微信号
  + QQ号
  + 联系地址
  + 工作单位
+ + 单位电话
+ + 简要描述
  + 额外信息
+## 建表语句
+```sql
+CREATE TABLE contact(
+    id BIGINT NOT NULL PRIMARY KEY,
+    name VARCHAR(16) NOT NULL,
+    english_name VARCHAR(32),
+    sex VARCHAR(16) NOT NULL,
+    birthday DATE,
+    phone VARCHAR(16),
+    email VARCHAR(64),
+    wechat VARCHAR(32),
+    qq VARCHAR(16),
+    address VARCHAR(512),
+    company VARCHAR(512),
+    company_phone VARCHAR(16),
+    memo VARCHAR(1024),
+    ext_info VARCHAR(1024)  
+);
+```

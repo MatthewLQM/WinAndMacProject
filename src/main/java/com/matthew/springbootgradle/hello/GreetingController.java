@@ -52,4 +52,19 @@ public class GreetingController {
         Test test = testService.queryByName(name);
         return test.toString();
     }
+
+    @RequestMapping("/insert")
+    public String insert(@RequestParam(value = "id") Long id, @RequestParam(value = "name") String name){
+        if(id == null || name == null) {
+            return "输入参数 id 和 name 不能为 null";
+        }
+        testService.insertTest(id, name);
+        return "true";
+    }
+
+    @RequestMapping("/delete")
+    public String delete(@RequestParam(value = "id") Long id) {
+        testService.deleteTest(id);
+        return "true";
+    }
 }

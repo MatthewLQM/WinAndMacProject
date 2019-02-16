@@ -27,4 +27,14 @@ public class TestServiceImpl implements TestService {
     public Test queryByName(String name) {
         return testJdbcRepository.queryTestByName(name);
     }
+
+    @Override
+    public void insertTest(Long id, String name) {
+        testJdbcRepository.insertTest(id, name);
+    }
+
+    @Override
+    public void deleteTest(Long id) {
+        testJdbcRepository.deleteTest(id);
+    }
 }

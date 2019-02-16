@@ -14,4 +14,7 @@ public interface TestJdbcRepository {
 
     Test queryTestByName(String name);
 
+    void insertTest(Long id, String name);
+
+    void deleteTest(Long id);
 }

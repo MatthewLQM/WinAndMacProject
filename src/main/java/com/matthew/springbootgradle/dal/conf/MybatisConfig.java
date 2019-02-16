@@ -20,7 +20,7 @@ public class MybatisConfig {
 
     static {
         try {
-            Reader reader = Resources.getResourceAsReader("datasource.xml");
+            Reader reader = Resources.getResourceAsReader("mapper/datasource.xml");
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         } catch (IOException e) {
             System.out.println(e.getMessage());

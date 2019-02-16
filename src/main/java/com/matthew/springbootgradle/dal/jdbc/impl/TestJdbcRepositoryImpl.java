@@ -38,4 +38,16 @@ public class TestJdbcRepositoryImpl implements TestJdbcRepository {
             return test;
         });
     }
+
+    @Override
+    public void insertTest(Long id, String name) {
+        String sql = "INSERT INTO test_table(id, name) VALUES(" + id + ",\'" + name + "\');";
+        jdbcTemplate.execute(sql);
+    }
+
+    @Override
+    public void deleteTest(Long id) {
+        String sql = "DELETE FROM test_table WHERE id = " + id;
+        jdbcTemplate.execute(sql);
+    }
 }

@@ -5,6 +5,7 @@
  + 需要实现联系人信息的修改（改）
  + 需要实现联系人信息的删除（删）
  + 需要实现联系人信息的查询（查）
+ + 需要实现联系人信息的导出功能，暂定为导出为 Excel
 ## 页面要求
  + 要有一丢丢的颜色
  + 要有自适应排版，支持放大和缩小
@@ -27,7 +28,7 @@
 ## 建表语句
 ```sql
 CREATE TABLE contact(
-    id BIGINT NOT NULL PRIMARY KEY,
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(16) NOT NULL,
     english_name VARCHAR(32),
     sex VARCHAR(16) NOT NULL,

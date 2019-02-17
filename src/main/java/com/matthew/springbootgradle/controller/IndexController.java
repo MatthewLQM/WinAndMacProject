@@ -1,4 +1,4 @@
-package com.matthew.springbootgradle.hello;
+package com.matthew.springbootgradle.controller;
 
 import com.matthew.springbootgradle.dal.model.Test;
 import com.matthew.springbootgradle.service.TestService;

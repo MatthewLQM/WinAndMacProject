@@ -2,6 +2,7 @@ package com.matthew.springbootgradle.service.impl;
 
 import com.matthew.springbootgradle.dal.jdbc.TestJdbcRepository;
 import com.matthew.springbootgradle.dal.model.Test;
+import com.matthew.springbootgradle.dal.mybatis.TestMyBatisRepository;
 import com.matthew.springbootgradle.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,9 +19,13 @@ public class TestServiceImpl implements TestService {
     @Autowired
     private TestJdbcRepository testJdbcRepository;
 
+    @Autowired
+    private TestMyBatisRepository testMyBatisRepository;
+
     @Override
     public List<Test> queryAllTest() {
-        return testJdbcRepository.queryAllTest();
+        //return testJdbcRepository.queryAllTest();
+        return testMyBatisRepository.selectAll();
     }
 
     @Override

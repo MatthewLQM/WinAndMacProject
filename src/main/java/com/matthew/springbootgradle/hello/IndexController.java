@@ -2,7 +2,6 @@ package com.matthew.springbootgradle.hello;
 
 import com.matthew.springbootgradle.dal.model.Test;
 import com.matthew.springbootgradle.service.TestService;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@Slf4j
 @Controller
 @RequestMapping("/index")
 public class IndexController {

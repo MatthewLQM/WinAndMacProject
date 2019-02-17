@@ -1,12 +1,12 @@
 # WinAndMacProject 
 在Windows和Mac电脑上，都可以通过Clone的方式直接运行的SpringBoot程序
 ## TODO List
-+ 使用 MyBatis 实现连接数据库的功能
 + 准备功能性质的开发，第一个功能：[联系人系统](docs/contact.md)
 ## Doing List
 + 寻找前端的解决方案，暂时使用了 thymeleaf 作为前端的解决方案
 + 建立一套日志系统，暂时使用简单的 LOG 方式
 ## Done List
++ 使用 MyBatis 实现连接数据库的功能
 + 初始化一个 SpringBoot 的工程，使用 Gradle 作为工程构建工具
 + + 使用 SpringBoot 简单的连接数据库，实现丑陋的增删改查
 ## Daily Record 
@@ -24,3 +24,5 @@
 利用 JDBCTemplate 实现了数据库的增、删、查；
 实现了一个简陋的前端界面。
 加入了简单的 LOG 内容，在每次请求的时候都可以进行 LOG。
+### 2019.02.17
+加入了 MyBatis 的支持，使用注解的方式实现 Mapper

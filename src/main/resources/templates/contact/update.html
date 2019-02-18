@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/default.css}" rel="stylesheet"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>联系人管理系统</h1>
+<form th:action="@{/contact/update}" method="post" class="form-horizontal">
+    <input type="hidden" name="id" th:value="${contact.id}"/>
+    <div class="form-group">
+        <label for="contact.name" class="col-sm-2 control-label">属性</label>
+        <label for="contact.name" class="col-sm-2 control-label">原始值</label>
+        <label for="contact.name" class="col-sm-2 control-label">新值</label>
+    </div>
+    <div class="form-group">
+        <label for="contact.name" class="col-sm-2 control-label">姓名</label>
+        <label for="contact.name" class="col-sm-2 control-label" th:text="${contact.name}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.name" name="name"
+                   th:attr="value=${contact.name}"  th:value="${contact.name}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.englishName" class="col-sm-2 control-label">英文名</label>
+        <label for="contact.englishName" class="col-sm-2 control-label" th:text="${contact.englishName}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.englishName" name="englishName"
+                   th:attr="value=${contact.englishName}" th:value="${contact.englishName}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.sex" class="col-sm-2 control-label">性别</label>
+        <label for="contact.sex" class="col-sm-2 control-label" th:text="${contact.sex}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.sex" name="sex"
+                   th:attr="value=${contact.sex}" th:value="${contact.sex}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.birthday" class="col-sm-2 control-label">生日</label>
+        <label for="contact.birthday" class="col-sm-2 control-label" th:text="${contact.birthday}"/>
+        <div class="col-xs-4">
+            <input type="date" class="form-control" id="contact.birthday" name="birthday"
+                   th:attr="value=${contact.birthday}" th:value="${contact.birthday}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.phone" class="col-sm-2 control-label">电话号码</label>
+        <label for="contact.phone" class="col-sm-2 control-label" th:text="${contact.phone}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.phone" name="phone"
+                   th:attr="value=${contact.phone}" th:value="${contact.phone}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.email" class="col-sm-2 control-label">电子邮箱</label>
+        <label for="contact.email" class="col-sm-2 control-label" th:text="${contact.email}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.email" name="email"
+                   th:attr="value=${contact.email}" th:value="${contact.email}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.wechat" class="col-sm-2 control-label">微信号</label>
+        <label for="contact.wechat" class="col-sm-2 control-label" th:text="${contact.wechat}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.wechat" name="wechat"
+                   th:attr="value=${contact.wechat}" th:value="${contact.wechat}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.qq" class="col-sm-2 control-label">QQ</label>
+        <label for="contact.qq" class="col-sm-2 control-label" th:text="${contact.qq}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.qq" name="qq"
+                   th:attr="value=${contact.qq}" th:value="${contact.qq}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.address" class="col-sm-2 control-label">联系地址</label>
+        <label for="contact.address" class="col-sm-2 control-label" th:text="${contact.address}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.address" name="address"
+                   th:attr="value=${contact.address}" th:value="${contact.address}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.company" class="col-sm-2 control-label">工作单位</label>
+        <label for="contact.company" class="col-sm-2 control-label" th:text="${contact.company}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.company" name="company"
+                   th:attr="value=${contact.company}" th:value="${contact.company}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.companyPhone" class="col-sm-2 control-label">单位电话</label>
+        <label for="contact.companyPhone" class="col-sm-2 control-label" th:text="${contact.companyPhone}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.companyPhone" name="companyPhone"
+                   th:attr="value=${contact.companyPhone}" th:value="${contact.companyPhone}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.memo" class="col-sm-2 control-label">简述</label>
+        <label for="contact.memo" class="col-sm-2 control-label" th:text="${contact.memo}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.memo" name="memo"
+                   th:attr="value=${contact.memo}" th:value="${contact.memo}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contact.extInfo" class="col-sm-2 control-label">备注</label>
+        <label for="contact.extInfo" class="col-sm-2 control-label" th:text="${contact.extInfo}"/>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" id="contact.extInfo" name="extInfo"
+                   th:attr="value=${contact.extInfo}" th:value="${contact.extInfo}"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input class="btn btn-primary" type="submit" value="提交"/>&nbsp;&nbsp;
+            <input class="btn" type="button" value="返回" onclick="history.back()"/>
+        </div>
+    </div>
+</form>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package com.matthew.springbootgradle.controller;
 
 import com.matthew.springbootgradle.dal.model.Contact;
-import com.matthew.springbootgradle.dal.model.Test;
 import com.matthew.springbootgradle.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -29,7 +28,7 @@ public class ContactController {
     public String index(Model model) {
         List<Contact> contacts = contactService.queryAllContact();
         model.addAttribute("contacts", contacts);
-        model.addAttribute("contact", new Contact());
+        model.addAttribute("createObject", new Contact());
         model.addAttribute("action", "create");
         return "contact/index";
     }
@@ -43,6 +42,19 @@ public class ContactController {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable Long id) {
         contactService.deleteContactById(id);
+        return "redirect:/contact/";
+    }
+
+    @RequestMapping(value = "/jumpToUpdate/{id}", method = RequestMethod.GET)
+    public String jumpToUpdate(Model model, @PathVariable Long id) {
+        Contact contact = contactService.queryContactById(id);
+        model.addAttribute("contact", contact);
+        return "contact/update";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(@ModelAttribute Contact contact) {
+        contactService.updateContactById(contact);
         return "redirect:/contact/";
     }
 

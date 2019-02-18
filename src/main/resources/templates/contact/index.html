@@ -24,6 +24,7 @@
             <th>单位电话</th>
             <th>简述</th>
             <th>备注</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -42,7 +43,10 @@
             <td th:text="${contact.companyPhone}"></td>
             <td th:text="${contact.memo}"></td>
             <td th:text="${contact.extInfo}"></td>
-            <td><a class="btn btn-danger" th:href="@{/contact/delete/{id}(id=${contact.id})}">删除</a></td>
+            <td>
+                <a class="btn btn-primary" th:href="@{/contact/jumpToUpdate/{id}(id=${contact.id})}">修改</a>
+                <a class="btn btn-danger" th:href="@{/contact/delete/{id}(id=${contact.id})}">删除</a>
+            </td>
         </tr>
     </tbody>
 </table>
@@ -50,68 +54,68 @@
     <div class="form-group">
         <label for="contact.name" class="col-sm-2 control-label">姓名</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.name" name="name" th:value="${contact.name}" />
+            <input type="text" class="form-control" id="contact.name" name="name" th:value="${createObject.name}" />
         </div>
     </div>
     <div class="form-group">
         <label for="contact.englishName" class="col-sm-2 control-label">英文名</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.englishName" name="englishName" th:value="${contact.englishName}" />
+            <input type="text" class="form-control" id="contact.englishName" name="englishName" th:value="${createObject.englishName}" />
         </div>
     </div><div class="form-group">
         <label for="contact.sex" class="col-sm-2 control-label">性别</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.sex" name="sex" th:value="${contact.sex}" />
+            <input type="text" class="form-control" id="contact.sex" name="sex" th:value="${createObject.sex}" />
         </div>
     </div><div class="form-group">
         <label for="contact.birthday" class="col-sm-2 control-label">生日</label>
         <div class="col-xs-4">
-            <input type="date" class="form-control" id="contact.birthday" name="birthday" th:value="${contact.birthday}" />
+            <input type="date" class="form-control" id="contact.birthday" name="birthday" th:value="${createObject.birthday}" />
         </div>
     </div><div class="form-group">
         <label for="contact.phone" class="col-sm-2 control-label">电话号码</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.phone" name="phone" th:value="${contact.phone}" />
+            <input type="text" class="form-control" id="contact.phone" name="phone" th:value="${createObject.phone}" />
         </div>
     </div><div class="form-group">
         <label for="contact.email" class="col-sm-2 control-label">电子邮箱</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.email" name="email" th:value="${contact.email}" />
+            <input type="text" class="form-control" id="contact.email" name="email" th:value="${createObject.email}" />
         </div>
     </div><div class="form-group">
         <label for="contact.wechat" class="col-sm-2 control-label">微信号</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.wechat" name="wechat" th:value="${contact.wechat}" />
+            <input type="text" class="form-control" id="contact.wechat" name="wechat" th:value="${createObject.wechat}" />
         </div>
     </div><div class="form-group">
         <label for="contact.qq" class="col-sm-2 control-label">QQ</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.qq" name="qq" th:value="${contact.qq}" />
+            <input type="text" class="form-control" id="contact.qq" name="qq" th:value="${createObject.qq}" />
         </div>
     </div><div class="form-group">
         <label for="contact.address" class="col-sm-2 control-label">联系地址</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.address" name="address" th:value="${contact.address}" />
+            <input type="text" class="form-control" id="contact.address" name="address" th:value="${createObject.address}" />
         </div>
     </div><div class="form-group">
         <label for="contact.company" class="col-sm-2 control-label">工作单位</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.company" name="company" th:value="${contact.company}" />
+            <input type="text" class="form-control" id="contact.company" name="company" th:value="${createObject.company}" />
         </div>
     </div><div class="form-group">
         <label for="contact.companyPhone" class="col-sm-2 control-label">单位电话</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.companyPhone" name="companyPhone" th:value="${contact.companyPhone}" />
+            <input type="text" class="form-control" id="contact.companyPhone" name="companyPhone" th:value="${createObject.companyPhone}" />
         </div>
     </div><div class="form-group">
         <label for="contact.memo" class="col-sm-2 control-label">简述</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.memo" name="memo" th:value="${contact.memo}" />
+            <input type="text" class="form-control" id="contact.memo" name="memo" th:value="${createObject.memo}" />
         </div>
     </div><div class="form-group">
         <label for="contact.extInfo" class="col-sm-2 control-label">备注</label>
         <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.extInfo" name="extInfo" th:value="${contact.extInfo}" />
+            <input type="text" class="form-control" id="contact.extInfo" name="extInfo" th:value="${createObject.extInfo}" />
         </div>
     </div>
     <div class="form-group">

@@ -37,7 +37,7 @@ public interface ContactMyBatisRepository {
     @Update("UPDATE contact SET name = #{name}, english_name = #{englishName}, sex = #{sex}, " +
             "birthday = #{birthday}, phone = #{phone}, email = #{email}, wechat = #{wechat}, " +
             "qq = #{qq}, address = #{address}, company = #{company}, company_phone = #{companyPhone}, " +
-            "memo = #{memo}, ext_info = #{extInfo} WHERE id = #{id},")
+            "memo = #{memo}, ext_info = #{extInfo} WHERE id = #{id}")
     void updateContact(Contact contact);
 
     @Delete("DELETE FROM contact WHERE id = #{id}")

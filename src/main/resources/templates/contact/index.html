@@ -7,6 +7,7 @@
 </head>
 <body>
 <h1>联系人管理系统</h1>
+<a class="btn btn-primary" th:href="@{/contact/jumpToCreate}">新增</a>
 <table class="table table-hover table-condensed" border="1">
     <thead>
         <tr>
@@ -50,80 +51,5 @@
         </tr>
     </tbody>
 </table>
-<form th:action="@{/contact/{action}(action=${action})}" method="post" class="form-horizontal">
-    <div class="form-group">
-        <label for="contact.name" class="col-sm-2 control-label">姓名</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.name" name="name" th:value="${createObject.name}" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="contact.englishName" class="col-sm-2 control-label">英文名</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.englishName" name="englishName" th:value="${createObject.englishName}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.sex" class="col-sm-2 control-label">性别</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.sex" name="sex" th:value="${createObject.sex}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.birthday" class="col-sm-2 control-label">生日</label>
-        <div class="col-xs-4">
-            <input type="date" class="form-control" id="contact.birthday" name="birthday" th:value="${createObject.birthday}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.phone" class="col-sm-2 control-label">电话号码</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.phone" name="phone" th:value="${createObject.phone}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.email" class="col-sm-2 control-label">电子邮箱</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.email" name="email" th:value="${createObject.email}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.wechat" class="col-sm-2 control-label">微信号</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.wechat" name="wechat" th:value="${createObject.wechat}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.qq" class="col-sm-2 control-label">QQ</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.qq" name="qq" th:value="${createObject.qq}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.address" class="col-sm-2 control-label">联系地址</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.address" name="address" th:value="${createObject.address}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.company" class="col-sm-2 control-label">工作单位</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.company" name="company" th:value="${createObject.company}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.companyPhone" class="col-sm-2 control-label">单位电话</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.companyPhone" name="companyPhone" th:value="${createObject.companyPhone}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.memo" class="col-sm-2 control-label">简述</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.memo" name="memo" th:value="${createObject.memo}" />
-        </div>
-    </div><div class="form-group">
-        <label for="contact.extInfo" class="col-sm-2 control-label">备注</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="contact.extInfo" name="extInfo" th:value="${createObject.extInfo}" />
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <input class="btn btn-primary" type="submit" value="提交"/>&nbsp;&nbsp;
-            <input class="btn" type="button" value="返回" onclick="history.back()"/>
-        </div>
-    </div>
-</form>
 </body>
 </html>

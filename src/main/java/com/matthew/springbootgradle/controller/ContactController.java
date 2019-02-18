@@ -52,6 +52,13 @@ public class ContactController {
         return "contact/update";
     }
 
+    @RequestMapping(value = "/jumpToCreate", method = RequestMethod.GET)
+    public String jumpToCreate(Model model) {
+        Contact contact = new Contact();
+        model.addAttribute("contact", contact);
+        return "contact/create";
+    }
+
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(@ModelAttribute Contact contact) {
         contactService.updateContactById(contact);

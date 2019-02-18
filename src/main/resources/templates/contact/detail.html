@@ -8,5 +8,63 @@
 </head>
 <body>
 <h1>联系人管理系统 —— 详情页面</h1>
+<table class="table table-hover table-condensed" border="1">
+    <tr>
+        <td>ID</td>
+        <td th:text="${contact.id}"></td>
+    </tr>
+    <tr>
+        <td>姓名</td>
+        <td th:text="${contact.name}"></td>
+    </tr>
+    <tr>
+        <td>英文名</td>
+        <td th:text="${contact.englishName}"></td>
+    </tr>
+    <tr>
+        <td>性别</td>
+        <td th:text="${contact.sex}"></td>
+    </tr>
+    <tr>
+        <td>生日</td>
+        <td th:text="${contact.birthday}"></td>
+    </tr>
+    <tr>
+        <td>电话号码</td>
+        <td th:text="${contact.phone}"></td>
+    </tr>
+    <tr>
+        <td>电子邮箱</td>
+        <td th:text="${contact.email}"></td>
+    </tr>
+    <tr>
+        <td>微信号</td>
+        <td th:text="${contact.wechat}"></td>
+    </tr>
+    <tr>
+        <td>QQ</td>
+        <td th:text="${contact.qq}"></td>
+    </tr>
+    <tr>
+        <td>联系地址</td>
+        <td th:text="${contact.address}"></td>
+    </tr>
+    <tr>
+        <td>工作单位</td>
+        <td th:text="${contact.company}"></td>
+    </tr>
+    <tr>
+        <td>单位电话</td>
+        <td th:text="${contact.companyPhone}"></td>
+    </tr>
+    <tr>
+        <td>简述</td>
+        <td th:text="${contact.memo}"></td>
+    </tr>
+    <tr>
+        <td>备注</td>
+        <td th:text="${contact.extInfo}"></td>
+    </tr>
+</table>
 </body>
 </html>

@@ -59,6 +59,13 @@ public class ContactController {
         return "contact/create";
     }
 
+    @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+    public String detail(Model model, @PathVariable Long id) {
+        Contact contact = contactService.queryContactById(id);
+        model.addAttribute("contact", contact);
+        return "contact/detail";
+    }
+
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(@ModelAttribute Contact contact) {
         contactService.updateContactById(contact);

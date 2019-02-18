@@ -11,40 +11,23 @@
 <table class="table table-hover table-condensed" border="1">
     <thead>
         <tr>
-            <th>ID</th>
             <th>姓名</th>
-            <th>英文名</th>
-            <th>性别</th>
-            <th>生日</th>
-            <th>电话号码</th>
             <th>电子邮箱</th>
-            <th>微信号</th>
-            <th>QQ</th>
             <th>联系地址</th>
             <th>工作单位</th>
             <th>单位电话</th>
-            <th>简述</th>
-            <th>备注</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         <tr th:each="contact : ${contacts}" >
-            <td th:text="${contact.id}"></td>
             <td th:text="${contact.name}"></td>
-            <td th:text="${contact.englishName}"></td>
-            <td th:text="${contact.sex}"></td>
-            <td th:text="${contact.birthday}"></td>
-            <td th:text="${contact.phone}"></td>
             <td th:text="${contact.email}"></td>
-            <td th:text="${contact.wechat}"></td>
-            <td th:text="${contact.qq}"></td>
             <td th:text="${contact.address}"></td>
             <td th:text="${contact.company}"></td>
             <td th:text="${contact.companyPhone}"></td>
-            <td th:text="${contact.memo}"></td>
-            <td th:text="${contact.extInfo}"></td>
             <td>
+                <a class="btn btn-primary" th:href="@{/contact/detail/{id}(id=${contact.id})}">详情</a>
                 <a class="btn btn-primary" th:href="@{/contact/jumpToUpdate/{id}(id=${contact.id})}">修改</a>
                 <a class="btn btn-danger" th:href="@{/contact/delete/{id}(id=${contact.id})}">删除</a>
             </td>

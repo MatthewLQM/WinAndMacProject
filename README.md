@@ -1,5 +1,7 @@
-# WinAndMacProject 
-在Windows和Mac电脑上，都可以通过Clone的方式直接运行的SpringBoot程序
+
+# WinAndMacProject  
+在Windows和Mac电脑上，都可以通过Clone的方式直接运行的SpringBoot程序   
+![](http://img.shields.io/travis/MatthewLQM/WinAndMacProject.svg) 
 ## TODO List
 + 打包并部署到开发服务器上
 + 需要实现基础的查询功能，同时实现按照查询结果存储的功能

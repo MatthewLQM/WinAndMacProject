@@ -2,6 +2,7 @@
 在Windows和Mac电脑上，都可以通过Clone的方式直接运行的SpringBoot程序
 ## TODO List
 + 打包并部署到开发服务器上
++ 需要实现基础的查询功能，同时实现按照查询结果存储的功能
 ## Doing List
 + 准备功能性质的开发，第一个功能：[联系人系统](docs/contact.md)
 + 建立一套日志系统，暂时使用简单的 LOG 方式

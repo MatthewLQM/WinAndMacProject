@@ -82,7 +82,7 @@ public class ContactController {
         response.setContentType("application/octet-stream");
         try {
             HSSFWorkbook workbook = contactService.saveContactToExcel();
-            response.setHeader("Content-Disposition", "attachment; filename=download.xls");
+            response.setHeader("Content-Disposition", "attachment; filename=contact.xls");
             workbook.write(response.getOutputStream());
             response.flushBuffer();
         } catch (IOException e) {

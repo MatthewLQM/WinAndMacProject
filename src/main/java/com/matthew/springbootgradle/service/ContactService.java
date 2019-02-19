@@ -1,6 +1,7 @@
 package com.matthew.springbootgradle.service;
 
 import com.matthew.springbootgradle.dal.model.Contact;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.util.List;
 
@@ -19,5 +20,7 @@ public interface ContactService {
     void updateContactById(Contact contact);
 
     void deleteContactById(Long id);
+
+    HSSFWorkbook saveContactToExcel();
 
 }

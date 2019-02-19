@@ -2,6 +2,7 @@ package com.matthew.springbootgradle.controller;
 
 import com.matthew.springbootgradle.dal.model.Contact;
 import com.matthew.springbootgradle.service.ContactService;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -70,6 +74,20 @@ public class ContactController {
     public String update(@ModelAttribute Contact contact) {
         contactService.updateContactById(contact);
         return "redirect:/contact/";
+    }
+
+    @RequestMapping(value = "/download", method = RequestMethod.POST)
+    public void downloadExcelFile(HttpServletRequest request, HttpServletResponse response) {
+        response.setCharacterEncoding(request.getCharacterEncoding());
+        response.setContentType("application/octet-stream");
+        try {
+            HSSFWorkbook workbook = contactService.saveContactToExcel();
+            response.setHeader("Content-Disposition", "attachment; filename=download.xls");
+            workbook.write(response.getOutputStream());
+            response.flushBuffer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @InitBinder

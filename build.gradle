@@ -32,6 +32,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-jdbc'
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.apache.poi:poi:4.0.0'
     compile 'org.projectlombok:lombok:1.16.18'
     runtime 'mysql:mysql-connector-java'
     testCompile 'org.springframework.boot:spring-boot-starter-test'

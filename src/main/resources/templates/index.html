@@ -6,43 +6,10 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello World</h1>
+<h1>浪明小站</h1>
 <p>Author : MatthewLQM</p>
 <p>Email : matthewlqm@163.com</p>
-<table class="table table-hover table-condensed" border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>NAME</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="test : ${tests}" >
-            <td th:text="${test.id}"></td>
-            <td th:text="${test.name}"></td>
-            <td><a class="btn btn-danger" th:href="@{/index/delete/{id}(id=${test.id})}">删除</a></td>
-        </tr>
-    </tbody>
-</table>
-<form th:action="@{/index/{action}(action=${action})}" method="post" class="form-horizontal">
-    <div class="form-group">
-        <label for="test.id" class="col-sm-2 control-label">ID</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="test.id" name="id" th:value="${test.id}" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="test_name" class="col-sm-2 control-label">名称:</label>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="test_name" name="name" th:value="${test.name}"/>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <input class="btn btn-primary" type="submit" value="提交"/>&nbsp;&nbsp;
-            <input class="btn" type="button" value="返回" onclick="history.back()"/>
-        </div>
-    </div>
-</form>
+<h2>联系人管理功能</h2>
+<a href="/contact">点此进入</a>
 </body>
 </html>

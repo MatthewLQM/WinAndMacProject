@@ -1,8 +1,11 @@
 package com.matthew.springbootgradle.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.matthew.springbootgradle.dal.model.Contact;
 import com.matthew.springbootgradle.service.ContactService;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -25,6 +28,8 @@ import java.util.List;
 @RequestMapping("/contact")
 public class ContactController {
 
+    private final static Logger LOGGER = LoggerFactory.getLogger(ContactController.class);
+
     @Autowired
     private ContactService contactService;
 
@@ -39,6 +44,7 @@ public class ContactController {
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public String create(@ModelAttribute Contact contact) {
+        LOGGER.info("contact=" + JSON.toJSONString(contact));
         contactService.insertContact(contact);
         return "redirect:/contact/";
     }

@@ -1,7 +1,9 @@
 
 # WinAndMacProject  
-在Windows和Mac电脑上，都可以通过Clone的方式直接运行的SpringBoot程序   
+在Windows和Mac电脑上，都可以通过Clone的方式直接运行的SpringBoot程序    
+
 ![](http://img.shields.io/travis/MatthewLQM/WinAndMacProject.svg) 
+ 
 ## TODO List
 + 打包并部署到开发服务器上
 + 需要实现基础的查询功能，同时实现按照查询结果存储的功能
@@ -37,3 +39,6 @@
 加入了联系人的详情页，使整体的功能好看了一些。
 ### 2019.02.19
 实现了联系人导出 Excel 的功能，但是暂时还不能手工选择路径，会保存到默认的下载路径。
+### 2019.02.21
+实现了部署到服务器上的功能，待整理文档；
+补充了一些日志，还不知道如何输出到文件中。
